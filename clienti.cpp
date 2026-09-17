@@ -209,7 +209,7 @@ void caricaClienti()
     }
 
     clienti c;
-    while (file >> c.cognome >> c.email >> c.eta >> c.nome >> c.numeroTelefonico >> c.paeseResidenza >> c.spesaTotaleCliente >> c.voucher)
+    while (file >> c.nome >> c.cognome >> c.email >> c.eta >> c.numeroTelefonico >> c.paeseResidenza >> c.spesaTotaleCliente >> c.voucher)
     {
         groupFeliceCliente.push_back(c);
     }
