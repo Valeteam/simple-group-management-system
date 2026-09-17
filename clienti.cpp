@@ -165,7 +165,7 @@ void modificaCliente()
 
 void clientePiuPresente()
 {
-    int max = 0;
+    float max = 0;
     string nomeCliente;
 
     for (int i = 0; i < groupFeliceCliente.size(); i++)
