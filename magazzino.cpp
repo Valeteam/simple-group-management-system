@@ -8,7 +8,7 @@ using namespace std;
 void aggiungiProdotti()
 {
     prodotti p;
-    cout << "aggiungi dipendente\n";
+    cout << "aggiungi prodotto\n";
     cout << "nome ";
     cin >> p.nome;
     cout << "prezzo ";
