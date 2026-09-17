@@ -146,7 +146,9 @@ void salvaProdotti()
         file << groupFeliceProdotti[i].nome << " "
              << groupFeliceProdotti[i].costo << " "
              << groupFeliceProdotti[i].quantita << " "
-             << groupFeliceProdotti[i].scortaMinima << "\n";
+             << groupFeliceProdotti[i].scortaMinima << "\n"
+             << groupFeliceProdotti[i].quantitaVenduta << "\n"
+             << groupFeliceProdotti[i].valoreSconto << "\n";
     }
 
     file.close();
@@ -162,7 +164,7 @@ void caricaProdotti()
     }
 
     prodotti p;
-    while (file >> p.nome >> p.costo >> p.quantita >> p.scortaMinima)
+    while (file >> p.nome >> p.costo >> p.quantita >> p.scortaMinima >> p.quantitaVenduta >> p.valoreSconto)
     {
         groupFeliceProdotti.push_back(p);
     }
