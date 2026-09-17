@@ -169,29 +169,6 @@ void caricaProdotti()
 
     file.close();
 }
-
-void mostraBanca()
-{
-    cout << "\t budget mensile  \t|" << bancaGroupFelice[0].budgetMensile << "\n";
-    cout << "\t entrate mensili \t|" << bancaGroupFelice[0].entrateMensili << "\n";
-    cout << "\t costo mensile   \t|" << bancaGroupFelice[0].costoMensile << "\n";
-    cout << "\t saldo           \t|" << (bancaGroupFelice[0].budgetMensile + bancaGroupFelice[0].entrateMensili - bancaGroupFelice[0].costoMensile) << "\n\n";
-}
-
-//?costi da sistemare
-
-void costi()
-{
-    float totaleCosti = 0;
-    int i = 0;
-    while (i < groupFelice.size())
-    {
-        totaleCosti = totaleCosti + groupFelice[i].stipendio;
-        i++;
-    }
-    bancaGroupFelice[0].costoMensile = bancaGroupFelice[0].costoMensile + totaleCosti;
-}
-
 // fatta ia qui
 void salvaScontrino(string nomeCliente, string dettaglio, float totale)
 {
@@ -212,7 +189,6 @@ void salvaScontrino(string nomeCliente, string dettaglio, float totale)
     file.close();
     numeroScontrino++;
 }
-
 void entrate()
 {
     float costiEntrate = 0;
@@ -388,57 +364,6 @@ void entrate()
         cout << "scontrino salvato in scontrini.txt\n\n";
     }
 }
-
-void inizializzaBanca()
-{
-    banca b;
-    b.budgetMensile = 0;
-    b.costoMensile = 0;
-    b.entrateMensili = 0;
-    bancaGroupFelice.push_back(b);
-}
-
-void salvaBanca()
-{
-    ofstream file("db/banca.txt");
-    file << bancaGroupFelice[0].budgetMensile << " "
-         << bancaGroupFelice[0].costoMensile << " "
-         << bancaGroupFelice[0].entrateMensili << "\n";
-    file.close();
-}
-
-void caricaBanca()
-{
-    ifstream file("db/banca.txt");
-
-    if (!file)
-    {
-        inizializzaBanca();
-        return;
-    }
-
-    banca b;
-    if (file >> b.budgetMensile >> b.costoMensile >> b.entrateMensili)
-    {
-        bancaGroupFelice.push_back(b);
-    }
-    else
-    {
-        inizializzaBanca();
-    }
-
-    file.close();
-}
-
-// da implementare
-void lavoriBanca()
-{
-    float prezzo;
-    cout << "Inserisci il budget per l'azienda: ";
-    cin >> prezzo;
-    bancaGroupFelice[0].budgetMensile = prezzo;
-}
-
 // visualizzazione del prodotto più venduto
 void prodottoPiuVenduto()
 {
