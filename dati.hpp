@@ -29,8 +29,8 @@ public:
     double costo;
     int quantita;
     int scortaMinima;
-    int quantitaVenduta;
-    int valoreSconto;
+    int quantitaVenduta = 0;
+    int valoreSconto = 0;
 };
 
 class banca
