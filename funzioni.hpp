@@ -35,3 +35,5 @@ void cercaCliente();
 void prodottoPiuVenduto();
 void clientePiuPresente();
 void dipendendePiuCostoso();
+void salvaClienti();
+void caricaClienti();
