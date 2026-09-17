@@ -59,3 +59,4 @@ extern int prossimoIdDipendente;
 extern vector<prodotti> groupFeliceProdotti;
 extern vector<banca> bancaGroupFelice;
 extern vector<clienti> groupFeliceCliente;
+extern int numeroScontrino;
