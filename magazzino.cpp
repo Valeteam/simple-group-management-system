@@ -128,6 +128,7 @@ void modificaProdotto()
         case 4:
             cin >> nuovoSconto;
             groupFeliceProdotti[i].valoreSconto = nuovoSconto;
+            break;
         default:
             break;
         }
