@@ -104,10 +104,12 @@ void modificaProdotto()
         string nuovoNome;
         double nuovoPrezzo;
         int nuovaQuantita;
+        int nuovoSconto;
         cout << "digita il campo che vuoi modificare\n";
         cout << "1) Nome\n";
         cout << "2) Prezzo\n";
         cout << "3) Quantita\n";
+        cout << "4) Sconto\n";
         cin >> opzione;
         switch (opzione)
         {
@@ -123,7 +125,9 @@ void modificaProdotto()
             cin >> nuovaQuantita;
             groupFeliceProdotti[i].quantita = nuovaQuantita;
             break;
-
+        case 4:
+            cin >> nuovoSconto;
+            groupFeliceProdotti[i].valoreSconto = nuovoSconto;
         default:
             break;
         }
@@ -275,8 +279,10 @@ void entrate()
             if (groupFeliceProdotti[number].valoreSconto > 0)
             {
                 // calcolo costo spesa di prodotto specifico con sconto
-                valoreParziale = ((quantity * groupFeliceProdotti[number].costo) * groupFeliceProdotti[number].valoreSconto) / 100;
-            }else{
+                valoreParziale = (quantity * groupFeliceProdotti[number].costo) - (((quantity * groupFeliceProdotti[number].costo) * groupFeliceProdotti[number].valoreSconto) / 100);
+            }
+            else
+            {
                 // calcolo costo spesa di prodotto specifico senza sconto
                 valoreParziale = quantity * groupFeliceProdotti[number].costo;
             }
@@ -325,8 +331,8 @@ void entrate()
                 {
                     cout << "non avevi nessun voucher disponibile da scalare\n";
                 }
-                groupFeliceCliente[numeroUsers].voucher += 10;
-                cout << "ti è stato accreditato un nuovo voucher da €10 per la prossima spesa\n";
+                groupFeliceCliente[numeroUsers].voucher += 15;
+                cout << "ti è stato accreditato un nuovo voucher da €15 per la prossima spesa\n";
             }
             else if (Spesa >= 50)
             {
@@ -342,8 +348,8 @@ void entrate()
                 {
                     cout << "non avevi nessun voucher disponibile da scalare\n";
                 }
-                groupFeliceCliente[numeroUsers].voucher += 5;
-                cout << "ti è stato accreditato un nuovo voucher da €5 per la prossima spesa\n";
+                groupFeliceCliente[numeroUsers].voucher += 10;
+                cout << "ti è stato accreditato un nuovo voucher da €10 per la prossima spesa\n";
             }
             else
             {
@@ -351,6 +357,24 @@ void entrate()
                 cout << "ti sono però stati accreditati altri €5 di voucher che potrai usare nella prossima spesa\n";
                 groupFeliceCliente[numeroUsers].voucher = groupFeliceCliente[numeroUsers].voucher + 5;
             }
+        }
+    }
+    else
+    {
+        if (Spesa >= 100)
+        {
+            groupFeliceCliente[numeroUsers].voucher += 15;
+            cout << "ti è stato accreditato un nuovo voucher da €15 per la prossima spesa\n";
+        }
+        else if (Spesa >= 50)
+        {
+            groupFeliceCliente[numeroUsers].voucher += 10;
+            cout << "ti è stato accreditato un nuovo voucher da €10 per la prossima spesa\n";
+        }
+        else
+        {
+            cout << "ti sono però stati accreditati altri €5 di voucher che potrai usare nella prossima spesa\n";
+            groupFeliceCliente[numeroUsers].voucher = groupFeliceCliente[numeroUsers].voucher + 5;
         }
     }
     // aggiunto valore spesa al cliente x statistiche
