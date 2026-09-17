@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "dati.hpp"
 #include "funzioni.hpp"
 
@@ -162,7 +163,8 @@ void modificaCliente()
     }
 }
 
-void clientePiuPresente(){
+void clientePiuPresente()
+{
     int max = 0;
     string nomeCliente;
 
@@ -174,6 +176,43 @@ void clientePiuPresente(){
             nomeCliente = groupFeliceCliente[i].nome;
         }
     }
-    cout << "il cliente che spende di più nel nostro punto vendita è: " << nomeCliente << "\n" << endl;
+    cout << "il cliente che spende di più nel nostro punto vendita è: " << nomeCliente << "\n"
+         << endl;
 }
 
+void salvaClienti()
+{
+    ofstream file("db/clienti.txt");
+
+    for (int i = 0; i < groupFeliceCliente.size(); i++)
+    {
+        file << groupFeliceCliente[i].nome << " "
+             << groupFeliceCliente[i].cognome << " "
+             << groupFeliceCliente[i].email << " "
+             << groupFeliceCliente[i].eta << " "
+             << groupFeliceCliente[i].numeroTelefonico << " "
+             << groupFeliceCliente[i].paeseResidenza << " "
+             << groupFeliceCliente[i].spesaTotaleCliente << " "
+             << groupFeliceCliente[i].voucher << "\n";
+    }
+
+    file.close();
+}
+
+void caricaClienti()
+{
+    ifstream file("db/clienti.txt");
+
+    if (!file)
+    {
+        return;
+    }
+
+    clienti c;
+    while (file >> c.cognome >> c.email >> c.eta >> c.nome >> c.numeroTelefonico >> c.paeseResidenza >> c.spesaTotaleCliente >> c.voucher)
+    {
+        groupFeliceCliente.push_back(c);
+    }
+
+    file.close();
+}
