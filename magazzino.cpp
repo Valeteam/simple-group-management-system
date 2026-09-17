@@ -178,7 +178,6 @@ void salvaScontrino(string nomeCliente, string dettaglio, float totale)
 
     time_t adesso = time(0);
     tm *dataOra = localtime(&adesso);
-    int numeroScontrino = 0;
 
     file << "======================================\n";
     file << "SCONTRINO n. " << numeroScontrino << "\n";
