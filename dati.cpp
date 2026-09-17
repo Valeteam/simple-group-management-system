@@ -5,3 +5,4 @@ int prossimoIdDipendente = 1;
 vector<prodotti> groupFeliceProdotti;
 vector<banca> bancaGroupFelice;
 vector<clienti> groupFeliceCliente;
+int numeroScontrino = 1;
