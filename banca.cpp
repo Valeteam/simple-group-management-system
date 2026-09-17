@@ -22,8 +22,6 @@ void mostraBanca()
     cout << "\t saldo           \t|" << (bancaGroupFelice[0].budgetMensile + bancaGroupFelice[0].entrateMensili - bancaGroupFelice[0].costoMensile) << "\n\n";
 }
 
-//?costi da sistemare
-
 void costi()
 {
     float totaleCosti = 0;
@@ -33,7 +31,7 @@ void costi()
         totaleCosti = totaleCosti + groupFelice[i].stipendio;
         i++;
     }
-    bancaGroupFelice[0].costoMensile = bancaGroupFelice[0].costoMensile + totaleCosti;
+    bancaGroupFelice[0].costoMensile = totaleCosti;
 }
 
 void salvaBanca()
