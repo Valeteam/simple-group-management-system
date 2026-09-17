@@ -191,6 +191,7 @@ int main()
     salvaDipendenti();
     salvaProdotti();
     salvaBanca();
+    salvaClienti();
     cout << "\ndati salvati su file, arrivederci!\n";
 
     double somma1 = 0;
