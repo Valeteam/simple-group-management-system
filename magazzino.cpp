@@ -96,7 +96,7 @@ void modificaProdotto()
 
     if (i == groupFeliceProdotti.size())
     {
-        cout << "dipendente non presente\n\n";
+        cout << "prodotto non presente\n\n";
     }
     else
     {
