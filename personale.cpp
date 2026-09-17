@@ -240,7 +240,7 @@ void modificaDipendente()
 
 void dipendendePiuCostoso()
 {
-    int max = 0;
+    double max = 0;
     string nameDipendente;
 
     for (int i = 0; i < groupFelice.size(); i++)
