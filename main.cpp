@@ -13,6 +13,9 @@ int main()
     filesystem::create_directories("db");
 
     caricaDipendenti();
+    caricaProdotti();
+    caricaBanca();
+    caricaClienti();
 
     bool trovatoAdmin = false;
     for (int i = 0; i < groupFelice.size(); i++)
@@ -29,9 +32,6 @@ int main()
     }
 
     login();
-
-    caricaProdotti();
-    caricaBanca();
 
     do
     {
