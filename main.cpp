@@ -151,7 +151,7 @@ int main()
                 cout << "\t Tasto 3 per mostrare tutti i clienti\n";
                 cout << "\t Tasto 4 per modificare cliente\n";
                 cout << "\t Tasto 5 per cercare cliente\n";
-                cout << "\t Tasto 5 per mostrare cliente che spende di più\n";
+                cout << "\t Tasto 6 per mostrare cliente che spende di più\n";
                 cout << "\t Tasto 7 per tornare al menu principale\n";
                 cin >> fifthoption;
                 switch (fifthoption)
