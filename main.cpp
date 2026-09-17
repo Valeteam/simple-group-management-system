@@ -1,4 +1,5 @@
 #include <iostream>
+#include <filesystem> // NUOVO: serve per creare la cartella db se non esiste
 #include "dati.hpp"
 #include "funzioni.hpp"
 
@@ -8,6 +9,11 @@ int main()
 {
     int firstOption;
     introtext();
+
+    // NUOVO: senza questa riga, se la cartella "db" non esiste, tutti i salvataggi
+    // falliscono in silenzio - create_directories non fa nulla (e non dà errore)
+    // se la cartella esiste già, quindi è sicura da chiamare ad ogni avvio
+    filesystem::create_directories("db");
 
     caricaDipendenti();
 
