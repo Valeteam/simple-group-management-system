@@ -50,7 +50,7 @@ public:
     string paeseResidenza;
     string numeroTelefonico;
     string email;
-    int spesaTotaleCliente = 0;
+    float spesaTotaleCliente = 0;
     int voucher = 0;
 };
 
