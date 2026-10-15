@@ -1,7 +1,3 @@
-# simple-group-management-system
-
-
-
 # 🛒 Simple Group Management System
 
 ### Il gestionale da terminale per far girare un supermercato. Veloce, leggero, tutto in C++.
